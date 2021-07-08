@@ -5,7 +5,7 @@ using namespace std;
 long long Fibonacci_Number(int n)
 {
     if(n<=1) return n;
-    int *fibArr = new int[n+1];
+    long long *fibArr = new long long[n+1];
     fibArr[0] = 0;
     fibArr[1] = 1;
     for(int i=2;i<=n;i++)
