@@ -15,18 +15,19 @@ int partition(vector<int>& A, int l, int r)
     swap(A[j], A[l]);
     return j;
 }
-void QuickSort(vector<int>& A, int l, int r)
+void RandomizedQuickSort(vector<int>& A, int l, int r)
 {
     if (l >= r)
         return;
+    swap(A[l],A[l+rand()%r]);
     int m = partition(A, l, r);
-    QuickSort(A, l, m - 1);
-    QuickSort(A, m + 1, r);
+    RandomizedQuickSort(A, l, m - 1);
+    RandomizedQuickSort(A, m + 1, r);
 }
 int main()
 {
     vector<int> v = {1, 5, 7, 2, 34, 9, 6};
-    QuickSort(v, 0, v.size() - 1);
+    RandomizedQuickSort(v, 0, v.size() - 1);
     for (int x : v)
         cout << x << " ";
     return 0;
